@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container-fluid">
+  <form action="{{ url_for('view') }}" method="post">
+    <h2>For session_id={{result[0]}}</h2>
+    <h2>Number of views in category A : {{result[1]}}</h2>
+    <h2>Number of views in category B : {{result[2]}}</h2>
+    <h2>Number of views in category C : {{result[3]}}</h2>
+    <h2>Number of views in category D : {{result[4]}}</h2>
+  </form>
+</div>
+{% endblock %}

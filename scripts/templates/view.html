@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container-fluid">
+  <form action="{{ url_for('view') }}" method="post">
+    {{ form.csrf_token }}
+    <h2>Enter session_id and parameter:</h2>
+      <p>1 - actual number of views per each catagory:</p>
+      <p>2 - number of views per each catagory in percentage</p>
+      <div class="row">
+      <div class="col">
+        {{ form.session_id.label }}
+      </div>
+      <div class="col">
+        {{ form.parameter.label }}
+      </div> 
+    </div>
+    <div class="row">
+      <div class="col">
+        {{ form.session_id(class="form-control") }}
+      </div>
+      <div class="col">
+        {{ form.parameter(class="form-control") }}
+      </div> 
+      <div class="col">
+        {{ form.submit(class="btn btn-primary") }}
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
